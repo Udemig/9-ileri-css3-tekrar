@@ -1,0 +1,201 @@
+.kapsayici {
+  background-color: aquamarine;
+  display: flex;
+  margin-bottom: 40px;
+  /* flex-direction: row; */
+  min-height: 200px;
+  gap: 10px;
+}
+.eleman {
+  background-color: blueviolet;
+  color: white;
+}
+/*
+    FLEX Yapısı:
+    * Kapsayıcı içerisindeki elemanları 
+    * esnek bir şekilde hizalamaya yarar.
+
+    Neden:
+    * flex aktif edildiği anda flex-direction değeri varsayılan row olarak gelir.
+    ! flex direction: flexin yönünü belirler
+    ? - row:yatay hizalama
+    ? - column:dikey hizalama
+*/
+/* 
+    Yatay Hizalamalar:
+    ! justify content:
+    ? - space-between: hepsine eşit boşluklar verir
+    ? - space-around: hem aralarına hem de başa ve sona boşluk verir
+    ? - space-evenly: aralarında boşluğu hepsine eşit şekilde verir başlarına sonlarınada
+    ? - center: ortaya hizalar
+    ? - start:başlangıca hizalar
+    ? - end:en sona hizalar
+*/
+.k1 {
+  flex-direction: row;
+}
+.k2 {
+  justify-content: space-between;
+}
+.k3 {
+  justify-content: space-around;
+}
+.k4 {
+  justify-content: space-evenly;
+}
+.k5 {
+  justify-content: center;
+}
+.k6 {
+  justify-content: start;
+}
+.k7 {
+  justify-content: end;
+}
+/* 
+    ! align-items:
+    Dikey Hizalama
+    ? - center: merkezde hizalar
+    ? - end: sona hizalar
+    ? - start:başlangıca hizalama
+*/
+.k8 {
+  align-items: center;
+}
+.k9 {
+  align-items: end;
+}
+.k10 {
+  align-items: start;
+}
+/* 
+    ? flex column
+    ! Önemli
+    * justify content ve align-items görevlerini değiştirir
+*/
+.k11 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.k12 {
+  flex-direction: column;
+  align-items: end;
+}
+.k13 {
+  flex-direction: column;
+  align-items: start;
+}
+/* flex öğelerinin sıralaması */
+.k14 {
+  flex-direction: row;
+}
+.k15 {
+  flex-direction: row-reverse;
+}
+.k16 {
+  flex-direction: column;
+}
+.k17 {
+  flex-direction: column-reverse;
+}
+/* 
+    ! Flex Wrap
+    ? - nowrap: alt satıra geçmirmez
+    ? - wrap: alt satıra geçmeye izin verir
+*/
+.k18 {
+  flex-wrap: nowrap;
+}
+.k19 {
+  flex-wrap: wrap;
+}
+/* flex elemanlarına verilebilen özellikler */
+/* ! align-self */
+.k20 .eleman:nth-child(3) {
+  align-self: end;
+}
+.k20 .eleman:nth-child(5) {
+  align-self: center;
+}
+.k21 .eleman:nth-child(odd) {
+  align-self: center;
+}
+/*!  order > sıra */
+/* .k21 .eleman:nth-child(5) {
+  order: -1;
+} */
+/* .k21 .eleman:nth-child(3) {
+  order: 1;
+} */
+/* Grid */
+.k22 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.k23 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+}
+.k24 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 40px;
+}
+/* ! filter */
+.k22 {
+  filter: grayscale(100%);
+}
+.k23 {
+  filter: drop-shadow(100px 40px 100px);
+}
+.k24 {
+  filter: hue-rotate(20deg);
+}
+/* media */
+.kutu {
+  height: 500px;
+  background-color: rgb(209, 192, 224);
+  display: flex;
+  gap: 10px;
+}
+.kutu .eleman {
+  width: 100%;
+  height: 100%;
+}
+/* ekranıın boyutu 600px altındayken çalışacak işlemler */
+@media (max-width: 600px) {
+  .kutu {
+    flex-direction: column;
+  }
+  .eleman {
+    background-color: rgb(209, 192, 224) !important;
+  }
+}
+/* ekran boyutu 1500px altındayken içeriisndeki kod yapısı çalışır */
+@media (max-width: 1500px) {
+  .eleman {
+    background-color: red;
+  }
+}
+/* ekran boyutu 1501px ve 1501px üzerindeyken içerindeki kod yapısı çalışır */
+@media (min-width: 1501px) {
+  .eleman {
+    background-color: black;
+  }
+}
+.container {
+  background-color: red;
+  height: 400px;
+  position: relative;
+}
+.absolute {
+  background-color: aqua;
+  padding: 40px;
+  position: absolute;
+  /* bottom: 0px; */
+  left: 100px;
+  top: 200px;
+}
